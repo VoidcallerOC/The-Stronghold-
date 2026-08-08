@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>document.documentElement.classList.add('js');</script>
   <title>The Stronghold — Gaming · Vintage Collectibles · Trading Cards | Plainville, CT</title>
   <meta name="description" content="The Stronghold in Plainville, CT — your local hub for trading cards, gaming and vintage collectibles. Buy, Sell, Trade, Play. Magic: The Gathering, Pokémon, Yu-Gi-Oh and more. Singles, sealed product, and weekly events." />
   <meta name="theme-color" content="#0B0B0C" />
@@ -170,7 +171,15 @@
         <p class="lead" data-reveal>From the newest set to vintage grails. If it's worth collecting, chances are we've got it — or we can help you hunt it down.</p>
 
         <div class="games" id="gamesGrid">
-          <!-- injected by JS -->
+          <!-- Static fallback; enhanced/overwritten by JS. Edit content in assets/js/main.js -->
+          <article class="game" data-reveal data-reveal-delay="1"><div class="glow" style="background:#c06b2e"></div><span class="tag">Trading Card Game</span><div><h4>Magic: The Gathering</h4><p>Singles, sealed, Commander decks &amp; supplies.</p></div><span class="chip-suit">🔮</span></article>
+          <article class="game" data-reveal data-reveal-delay="2"><div class="glow" style="background:#e0b400"></div><span class="tag">Trading Card Game</span><div><h4>Pokémon</h4><p>Booster boxes, ETBs, singles &amp; league play.</p></div><span class="chip-suit">⚡</span></article>
+          <article class="game" data-reveal data-reveal-delay="3"><div class="glow" style="background:#7a4dd0"></div><span class="tag">Trading Card Game</span><div><h4>Yu-Gi-Oh!</h4><p>Structure decks, tins, singles &amp; tournaments.</p></div><span class="chip-suit">🎴</span></article>
+          <article class="game" data-reveal data-reveal-delay="4"><div class="glow" style="background:#c0392b"></div><span class="tag">Trading Card Game</span><div><h4>One Piece TCG</h4><p>The fastest-growing anime TCG — sealed &amp; singles.</p></div><span class="chip-suit">🏴‍☠️</span></article>
+          <article class="game" data-reveal data-reveal-delay="1"><div class="glow" style="background:#2e86c0"></div><span class="tag">Trading Card Game</span><div><h4>Disney Lorcana</h4><p>Inklands await — sets, singles &amp; starter decks.</p></div><span class="chip-suit">✨</span></article>
+          <article class="game" data-reveal data-reveal-delay="2"><div class="glow" style="background:#2ecc71"></div><span class="tag">Collectibles</span><div><h4>Sports Cards</h4><p>Baseball, basketball, football — vintage to modern.</p></div><span class="chip-suit">🏆</span></article>
+          <article class="game" data-reveal data-reveal-delay="3"><div class="glow" style="background:#95a5a6"></div><span class="tag">Vintage</span><div><h4>Vintage Collectibles</h4><p>Retro finds, memorabilia &amp; nostalgia on the wall.</p></div><span class="chip-suit">🗝️</span></article>
+          <article class="game" data-reveal data-reveal-delay="4"><div class="glow" style="background:#6CBE45"></div><span class="tag">Gear</span><div><h4>Supplies &amp; Accessories</h4><p>Sleeves, deck boxes, binders, playmats &amp; more.</p></div><span class="chip-suit">🛡️</span></article>
         </div>
       </div>
     </section>
@@ -216,7 +225,11 @@
         <p class="lead" data-reveal>The Stronghold is more than a shop — it's a gathering hall. Here's a taste of what the week looks like. Check our Facebook for the latest schedule, formats and prize support.</p>
 
         <div class="events" id="eventsGrid">
-          <!-- injected by JS -->
+          <!-- Static fallback; enhanced/overwritten by JS. Edit content in assets/js/main.js -->
+          <article class="event" data-reveal data-reveal-delay="1"><span class="day">Thursday</span><h4>Commander Night</h4><span class="time"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Casual EDH · Grab a pod</span></article>
+          <article class="event" data-reveal data-reveal-delay="2"><span class="day">Friday</span><h4>Friday Night Magic</h4><span class="time"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Draft &amp; Constructed · WPN</span></article>
+          <article class="event" data-reveal data-reveal-delay="3"><span class="day">Saturday</span><h4>Pokémon League</h4><span class="time"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>All ages · Open play</span></article>
+          <article class="event" data-reveal data-reveal-delay="4"><span class="day">Sunday</span><h4>Open Gaming</h4><span class="time"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Tables open · Bring your crew</span></article>
         </div>
         <p class="events-note" data-reveal>⚔️ Schedule and formats rotate — <a href="https://www.facebook.com/StrongholdCT/" target="_blank" rel="noopener" style="color:var(--green)">follow us on Facebook</a> for this week's events, release parties and tournaments.</p>
       </div>
@@ -231,7 +244,16 @@
         <div class="visit-grid">
           <div class="hours-card" data-reveal>
             <h3>Hours</h3>
-            <ul class="hours-list" id="hoursList"><!-- injected by JS --></ul>
+            <ul class="hours-list" id="hoursList">
+              <!-- Static fallback; enhanced/overwritten by JS (adds today highlight). Edit content in assets/js/main.js -->
+              <li><span class="d">Sunday</span><span class="t">12:00 PM – 8:00 PM</span></li>
+              <li><span class="d">Monday</span><span class="t">12:00 PM – 8:00 PM</span></li>
+              <li><span class="d">Tuesday</span><span class="t">12:00 PM – 8:00 PM</span></li>
+              <li><span class="d">Wednesday</span><span class="t">2:00 PM – 7:30 PM</span></li>
+              <li><span class="d">Thursday</span><span class="t">2:00 PM – 10:00 PM</span></li>
+              <li><span class="d">Friday</span><span class="t">2:00 PM – 8:00 PM</span></li>
+              <li><span class="d">Saturday</span><span class="t">2:00 PM – 8:00 PM</span></li>
+            </ul>
           </div>
 
           <div class="contact-block" data-reveal data-reveal-delay="1">
