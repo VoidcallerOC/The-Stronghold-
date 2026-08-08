@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 120" role="img" aria-label="The Stronghold shield and tower mark">
+  <!-- Shield -->
+  <path fill="#6CBE45" d="M50 2 C50 2 78 12 96 12 C96 12 96 66 96 66 C96 96 74 112 50 118 C26 112 4 96 4 66 C4 66 4 12 4 12 C22 12 50 2 50 2 Z"/>
+  <!-- Negative-space castle tower (background color shows through) -->
+  <path fill="#0B0B0C" d="
+    M30 40 h8 v-9 h8 v9 h8 v-9 h8 v9 h8 v52
+    a20 20 0 0 1 -20 12
+    a20 20 0 0 1 -20 -12 z"/>
+  <!-- Tower arch doorway -->
+  <path fill="#6CBE45" d="M43 96 a7 7 0 0 1 14 0 v14 h-14 z"/>
+</svg>
