@@ -363,6 +363,52 @@ body.menu-open .nav-toggle span::after { top: 0; transform: rotate(-45deg); }
 .deal-copy .btn { margin-top: 22px; }
 .deal-copy .pulled { margin-top: 16px; font-family: var(--ff-head); letter-spacing: .1em; text-transform: uppercase; font-size: .8rem; color: var(--muted-2); min-height: 1.2em; }
 
+/* ---------- Shop online / live inventory ---------- */
+.shop { background: var(--bg-2); border-block: 1px solid var(--line); }
+.shop-card {
+  position: relative; overflow: hidden;
+  display: grid; grid-template-columns: 1.05fr 0.95fr; gap: clamp(30px, 5vw, 64px); align-items: center;
+  padding: clamp(30px, 5vw, 60px); border-radius: var(--radius-lg);
+  background:
+    radial-gradient(90% 120% at 100% 0%, rgba(108,190,69,.14), transparent 55%),
+    linear-gradient(160deg, var(--panel), var(--bg));
+  border: 1px solid var(--line);
+}
+.shop-copy .eyebrow { margin-bottom: 4px; }
+.shop-copy .h-sec { margin-top: .25em; }
+.shop-actions { margin-top: 26px; display: flex; flex-wrap: wrap; gap: 16px; align-items: center; }
+.shop-feats { display: flex; flex-wrap: wrap; gap: 22px; margin-top: 24px; }
+.shop-feats li { display: inline-flex; align-items: center; gap: 8px; font-family: var(--ff-head); text-transform: uppercase; letter-spacing: .1em; font-size: .72rem; color: var(--muted); }
+.shop-feats svg { width: 16px; height: 16px; color: var(--green); }
+.shop-note { margin-top: 18px; color: var(--muted-2); font-size: .82rem; }
+
+.shop-visual { position: relative; min-height: 300px; display: grid; place-items: center; }
+.tcg-badge {
+  position: absolute; top: 8px; right: 8px; z-index: 3; text-align: right;
+  display: flex; flex-direction: column; padding: 10px 16px; border-radius: 12px;
+  background: rgba(11,11,12,.6); border: 1px solid var(--line); backdrop-filter: blur(6px);
+}
+.tcg-badge-top { font-family: var(--ff-head); text-transform: uppercase; letter-spacing: .18em; font-size: .55rem; color: var(--muted-2); }
+.tcg-badge-name { font-family: var(--ff-display); text-transform: uppercase; font-size: 1.25rem; color: var(--white); letter-spacing: .01em; }
+.fan { position: relative; width: 100%; height: 300px; }
+.fan-card {
+  position: absolute; left: 50%; top: 50%; width: clamp(96px, 12vw, 132px); aspect-ratio: 5/7;
+  border-radius: 12px; background: linear-gradient(150deg, var(--panel-2), var(--panel));
+  border: 1px solid var(--line); box-shadow: var(--shadow);
+  transform-origin: bottom center; transition: transform .5s var(--ease);
+}
+.fan-card i { position: absolute; inset: 10px; border-radius: 8px; border: 1px solid rgba(255,255,255,.05); background: radial-gradient(circle at 42% 34%, var(--green-glow), transparent 68%); opacity: .5; }
+.fan-card.c1 { transform: translate(-50%, -46%) rotate(-24deg); }
+.fan-card.c2 { transform: translate(-50%, -50%) rotate(-12deg); }
+.fan-card.c3 { transform: translate(-50%, -53%) rotate(0deg); z-index: 2; }
+.fan-card.c4 { transform: translate(-50%, -50%) rotate(12deg); }
+.fan-card.c5 { transform: translate(-50%, -46%) rotate(24deg); }
+.shop-card:hover .fan-card.c1 { transform: translate(-50%, -47%) rotate(-30deg); }
+.shop-card:hover .fan-card.c2 { transform: translate(-50%, -52%) rotate(-15deg); }
+.shop-card:hover .fan-card.c3 { transform: translate(-50%, -56%) rotate(0deg); }
+.shop-card:hover .fan-card.c4 { transform: translate(-50%, -52%) rotate(15deg); }
+.shop-card:hover .fan-card.c5 { transform: translate(-50%, -47%) rotate(30deg); }
+
 /* ---------- Events ---------- */
 .events { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px; margin-top: 48px; }
 .event {
@@ -427,6 +473,8 @@ body.menu-open .nav-toggle span::after { top: 0; transform: rotate(-45deg); }
   .games { grid-template-columns: repeat(2, 1fr); }
   .deal-wrap { grid-template-columns: 1fr; }
   .visit-grid { grid-template-columns: 1fr; }
+  .shop-card { grid-template-columns: 1fr; }
+  .shop-visual { min-height: 240px; order: -1; }
 }
 @media (max-width: 720px) {
   .nav-links, .nav-cta .btn { display: none; }
@@ -491,6 +539,7 @@ body.menu-open .nav-toggle span::after { top: 0; transform: rotate(-45deg); }
     <nav class="nav-links" aria-label="Primary">
       <a href="#do">What We Do</a>
       <a href="#games">Games</a>
+      <a href="#shop">Shop</a>
       <a href="#play">Play</a>
       <a href="#visit">Visit</a>
     </nav>
@@ -504,6 +553,7 @@ body.menu-open .nav-toggle span::after { top: 0; transform: rotate(-45deg); }
   <div class="nav-menu" id="navMenu">
     <a href="#do">What We Do</a>
     <a href="#games">Games</a>
+    <a href="#shop">Shop</a>
     <a href="#play">Play</a>
     <a href="#visit">Visit</a>
     <a class="btn btn--primary" href="https://maps.google.com/?q=The+Stronghold+433+East+St+Plainville+CT" target="_blank" rel="noopener">Visit Us</a>
@@ -606,6 +656,42 @@ body.menu-open .nav-toggle span::after { top: 0; transform: rotate(-45deg); }
           <article class="game" data-reveal data-reveal-delay="4"><div class="glow" style="background:#c0392b"></div><span class="tag">Trading Card Game</span><div><h4>One Piece TCG</h4><p>The fastest-growing anime TCG — sealed &amp; singles.</p></div><span class="chip-suit">🏴‍☠️</span></article>
           <article class="game" data-reveal data-reveal-delay="1"><div class="glow" style="background:#2e86c0"></div><span class="tag">Trading Card Game</span><div><h4>Disney Lorcana</h4><p>Inklands await — sets, singles &amp; starter decks.</p></div><span class="chip-suit">✨</span></article>
           <article class="game" data-reveal data-reveal-delay="2"><div class="glow" style="background:#6CBE45"></div><span class="tag">Gear</span><div><h4>Supplies &amp; Accessories</h4><p>Sleeves, deck boxes, binders, playmats &amp; more.</p></div><span class="chip-suit">🛡️</span></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SHOP ONLINE / LIVE INVENTORY ===================== -->
+    <section class="section shop" id="shop">
+      <div class="wrap">
+        <div class="shop-card" data-reveal>
+          <div class="shop-copy">
+            <span class="eyebrow">Shop Online</span>
+            <h2 class="h-sec">Buy From Our<br /><span class="g">Live Inventory</span></h2>
+            <p class="lead">Every single we have in stock — priced and ready to ship — lives on our TCGplayer store, updated in real time as cards sell and land. Browse the full catalog, lock in your cards, and check out securely.</p>
+            <div class="shop-actions">
+              <a class="btn btn--primary" href="https://www.tcgplayer.com/sellers/GetzMagic/855c99cc" target="_blank" rel="noopener">
+                Shop Live Inventory
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </a>
+            </div>
+            <ul class="shop-feats">
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10"/><path d="M22 4 12 14.01l-3-3"/></svg>Real-time stock</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Verified seller</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 3h15v13H1zM16 8h4l3 3v5h-7"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>Ships nationwide</li>
+            </ul>
+            <p class="shop-note">Secure checkout &amp; shipping handled by TCGplayer.</p>
+          </div>
+
+          <div class="shop-visual" aria-hidden="true">
+            <div class="tcg-badge"><span class="tcg-badge-top">Our store on</span><span class="tcg-badge-name">TCGplayer</span></div>
+            <div class="fan">
+              <span class="fan-card c1"><i></i></span>
+              <span class="fan-card c2"><i></i></span>
+              <span class="fan-card c3"><i></i></span>
+              <span class="fan-card c4"><i></i></span>
+              <span class="fan-card c5"><i></i></span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
