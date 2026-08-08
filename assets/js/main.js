@@ -27,13 +27,13 @@ const EVENTS = [
 // Store hours. Order = Sunday..Saturday to match Date.getDay().
 // closed:true renders "Closed". Verify against your real hours before launch.
 const HOURS = [
-  { day: "Sunday",    open: "12:00 PM", close: "8:00 PM" },
-  { day: "Monday",    open: "12:00 PM", close: "8:00 PM" },
-  { day: "Tuesday",   open: "12:00 PM", close: "8:00 PM" },
-  { day: "Wednesday", open: "2:00 PM",  close: "7:30 PM" },
-  { day: "Thursday",  open: "2:00 PM",  close: "10:00 PM" },
-  { day: "Friday",    open: "2:00 PM",  close: "8:00 PM" },
-  { day: "Saturday",  open: "2:00 PM",  close: "8:00 PM" },
+  { day: "Sunday",    open: "5:00 PM",  close: "9:00 PM" },
+  { day: "Monday",    open: "2:00 PM",  close: "7:00 PM" },
+  { day: "Tuesday",   open: "2:00 PM",  close: "7:00 PM" },
+  { day: "Wednesday", open: "2:00 PM",  close: "7:00 PM" },
+  { day: "Thursday",  open: "12:00 PM", close: "12:00 AM" },
+  { day: "Friday",    open: "2:00 PM",  close: "7:00 PM" },
+  { day: "Saturday",  open: "2:00 PM",  close: "7:00 PM" },
 ];
 
 // Cards for the "Pull A Card" reveal.
