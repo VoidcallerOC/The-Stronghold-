@@ -605,42 +605,7 @@ body.menu-open .nav-toggle span::after { top: 0; transform: rotate(-45deg); }
           <article class="game" data-reveal data-reveal-delay="3"><div class="glow" style="background:#7a4dd0"></div><span class="tag">Trading Card Game</span><div><h4>Yu-Gi-Oh!</h4><p>Structure decks, tins, singles &amp; tournaments.</p></div><span class="chip-suit">🎴</span></article>
           <article class="game" data-reveal data-reveal-delay="4"><div class="glow" style="background:#c0392b"></div><span class="tag">Trading Card Game</span><div><h4>One Piece TCG</h4><p>The fastest-growing anime TCG — sealed &amp; singles.</p></div><span class="chip-suit">🏴‍☠️</span></article>
           <article class="game" data-reveal data-reveal-delay="1"><div class="glow" style="background:#2e86c0"></div><span class="tag">Trading Card Game</span><div><h4>Disney Lorcana</h4><p>Inklands await — sets, singles &amp; starter decks.</p></div><span class="chip-suit">✨</span></article>
-          <article class="game" data-reveal data-reveal-delay="2"><div class="glow" style="background:#2ecc71"></div><span class="tag">Collectibles</span><div><h4>Sports Cards</h4><p>Baseball, basketball, football — vintage to modern.</p></div><span class="chip-suit">🏆</span></article>
-          <article class="game" data-reveal data-reveal-delay="3"><div class="glow" style="background:#95a5a6"></div><span class="tag">Vintage</span><div><h4>Vintage Collectibles</h4><p>Retro finds, memorabilia &amp; nostalgia on the wall.</p></div><span class="chip-suit">🗝️</span></article>
-          <article class="game" data-reveal data-reveal-delay="4"><div class="glow" style="background:#6CBE45"></div><span class="tag">Gear</span><div><h4>Supplies &amp; Accessories</h4><p>Sleeves, deck boxes, binders, playmats &amp; more.</p></div><span class="chip-suit">🛡️</span></article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===================== PULL A CARD ===================== -->
-    <section class="section" id="deal" style="background:var(--bg-2);border-block:1px solid var(--line);">
-      <div class="wrap">
-        <div class="deal-wrap">
-          <div class="deal-stage" data-reveal>
-            <div class="tcard" id="tcard" role="button" tabindex="0" aria-label="Flip the card">
-              <div class="face back">
-                <div class="pat"></div>
-                <svg width="64" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 120" role="img" aria-label="The Stronghold shield and tower mark"> <!-- Shield --> <path fill="#6CBE45" d="M50 2 C50 2 78 12 96 12 C96 12 96 66 96 66 C96 96 74 112 50 118 C26 112 4 96 4 66 C4 66 4 12 4 12 C22 12 50 2 50 2 Z"/> <!-- Negative-space castle tower (background color shows through) --> <path fill="#0B0B0C" d=" M30 40 h8 v-9 h8 v9 h8 v-9 h8 v9 h8 v52 a20 20 0 0 1 -20 12 a20 20 0 0 1 -20 -12 z"/> <!-- Tower arch doorway --> <path fill="#6CBE45" d="M43 96 a7 7 0 0 1 14 0 v14 h-14 z"/></svg>
-                <span class="hint">Tap to reveal</span>
-              </div>
-              <div class="face front">
-                <span class="rarity" id="cardRarity">Mythic Rare</span>
-                <div class="art" id="cardArt">🐉</div>
-                <span class="name" id="cardName">The Stronghold</span>
-                <span class="type" id="cardType">Legendary Local Game Store</span>
-              </div>
-            </div>
-          </div>
-          <div class="deal-copy">
-            <span class="eyebrow" data-reveal>Rip &amp; Reveal</span>
-            <h2 class="h-sec" data-reveal>Feeling <span class="g">Lucky?</span></h2>
-            <p class="lead" data-reveal>Every pack has a story. Flip the card, see what you pull — then come chase the real thing on our shelves. No two visits are the same.</p>
-            <button class="btn btn--primary" id="pullBtn" data-reveal>
-              Pull A Card
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 2v6h-6M3 12a9 9 0 0 1 15-6.7L21 8M3 22v-6h6M21 12a9 9 0 0 1-15 6.7L3 16"/></svg>
-            </button>
-            <p class="pulled" id="pulledMsg" aria-live="polite"></p>
-          </div>
+          <article class="game" data-reveal data-reveal-delay="2"><div class="glow" style="background:#6CBE45"></div><span class="tag">Gear</span><div><h4>Supplies &amp; Accessories</h4><p>Sleeves, deck boxes, binders, playmats &amp; more.</p></div><span class="chip-suit">🛡️</span></article>
         </div>
       </div>
     </section>
@@ -775,8 +740,6 @@ const GAMES = [
   { tag: "Trading Card Game", name: "Yu-Gi-Oh!", note: "Structure decks, tins, singles & tournaments.", suit: "🎴", color: "#7a4dd0" },
   { tag: "Trading Card Game", name: "One Piece TCG", note: "The fastest-growing anime TCG — sealed & singles.", suit: "🏴‍☠️", color: "#c0392b" },
   { tag: "Trading Card Game", name: "Disney Lorcana", note: "Inklands await — sets, singles & starter decks.", suit: "✨", color: "#2e86c0" },
-  { tag: "Collectibles", name: "Sports Cards", note: "Baseball, basketball, football — vintage to modern.", suit: "🏆", color: "#2ecc71" },
-  { tag: "Vintage", name: "Vintage Collectibles", note: "Retro finds, memorabilia & nostalgia on the wall.", suit: "🗝️", color: "#95a5a6" },
   { tag: "Gear", name: "Supplies & Accessories", note: "Sleeves, deck boxes, binders, playmats & more.", suit: "🛡️", color: "#6CBE45" },
 ];
 
@@ -801,16 +764,6 @@ const HOURS = [
 ];
 
 // Cards for the "Pull A Card" reveal.
-const PULLS = [
-  { rarity: "Mythic Rare",  art: "🐉", name: "Ancient Wyrm",     type: "Legendary Creature — Dragon" },
-  { rarity: "Holo Rare",    art: "⚡", name: "Voltbeast",         type: "Basic Energy · Lightning" },
-  { rarity: "Secret Rare",  art: "🗡️", name: "Blade of the Keep", type: "Equipment — Relic" },
-  { rarity: "Ultra Rare",   art: "🛡️", name: "Stronghold Sentry", type: "Guardian — Wall" },
-  { rarity: "Full Art",     art: "🔥", name: "Embercaller",       type: "Sorcery — Ritual" },
-  { rarity: "Grail Pull",   art: "👑", name: "The First Champion", type: "Vintage · 1st Edition" },
-  { rarity: "Chase Card",   art: "🌟", name: "Astral Nomad",       type: "Planeswalker — Wanderer" },
-];
-
 /* ------------------------------------------------------------------
    Helpers
    ------------------------------------------------------------------ */
@@ -981,49 +934,6 @@ function initTilt() {
 }
 
 /* ------------------------------------------------------------------
-   Pull a card
-   ------------------------------------------------------------------ */
-function initPull() {
-  const card = $("#tcard");
-  const btn = $("#pullBtn");
-  const msg = $("#pulledMsg");
-  if (!card) return;
-  let flipped = false;
-
-  const setCard = (p) => {
-    $("#cardRarity").textContent = p.rarity;
-    $("#cardArt").textContent = p.art;
-    $("#cardName").textContent = p.name;
-    $("#cardType").textContent = p.type;
-  };
-
-  const pull = () => {
-    if (flipped) {
-      // flip back, then draw a new one and flip forward
-      card.classList.remove("flipped");
-      flipped = false;
-      msg.textContent = "";
-      setTimeout(() => {
-        setCard(PULLS[Math.floor(Math.random() * PULLS.length)]);
-        card.classList.add("flipped");
-        flipped = true;
-        showMsg();
-      }, 460);
-    } else {
-      setCard(PULLS[Math.floor(Math.random() * PULLS.length)]);
-      card.classList.add("flipped");
-      flipped = true;
-      showMsg();
-    }
-  };
-  const showMsg = () => { msg.textContent = `You pulled a ${$("#cardRarity").textContent}! 🎉`; };
-
-  btn?.addEventListener("click", pull);
-  card.addEventListener("click", pull);
-  card.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); pull(); } });
-}
-
-/* ------------------------------------------------------------------
    Misc
    ------------------------------------------------------------------ */
 function initMisc() {
@@ -1047,7 +957,6 @@ document.addEventListener("DOMContentLoaded", () => {
   initCursor();
   initHeroCards();
   initTilt();
-  initPull();
 });
 
 </script>

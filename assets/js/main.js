@@ -13,8 +13,6 @@ const GAMES = [
   { tag: "Trading Card Game", name: "Yu-Gi-Oh!", note: "Structure decks, tins, singles & tournaments.", suit: "🎴", color: "#7a4dd0" },
   { tag: "Trading Card Game", name: "One Piece TCG", note: "The fastest-growing anime TCG — sealed & singles.", suit: "🏴‍☠️", color: "#c0392b" },
   { tag: "Trading Card Game", name: "Disney Lorcana", note: "Inklands await — sets, singles & starter decks.", suit: "✨", color: "#2e86c0" },
-  { tag: "Collectibles", name: "Sports Cards", note: "Baseball, basketball, football — vintage to modern.", suit: "🏆", color: "#2ecc71" },
-  { tag: "Vintage", name: "Vintage Collectibles", note: "Retro finds, memorabilia & nostalgia on the wall.", suit: "🗝️", color: "#95a5a6" },
   { tag: "Gear", name: "Supplies & Accessories", note: "Sleeves, deck boxes, binders, playmats & more.", suit: "🛡️", color: "#6CBE45" },
 ];
 
@@ -39,16 +37,6 @@ const HOURS = [
 ];
 
 // Cards for the "Pull A Card" reveal.
-const PULLS = [
-  { rarity: "Mythic Rare",  art: "🐉", name: "Ancient Wyrm",     type: "Legendary Creature — Dragon" },
-  { rarity: "Holo Rare",    art: "⚡", name: "Voltbeast",         type: "Basic Energy · Lightning" },
-  { rarity: "Secret Rare",  art: "🗡️", name: "Blade of the Keep", type: "Equipment — Relic" },
-  { rarity: "Ultra Rare",   art: "🛡️", name: "Stronghold Sentry", type: "Guardian — Wall" },
-  { rarity: "Full Art",     art: "🔥", name: "Embercaller",       type: "Sorcery — Ritual" },
-  { rarity: "Grail Pull",   art: "👑", name: "The First Champion", type: "Vintage · 1st Edition" },
-  { rarity: "Chase Card",   art: "🌟", name: "Astral Nomad",       type: "Planeswalker — Wanderer" },
-];
-
 /* ------------------------------------------------------------------
    Helpers
    ------------------------------------------------------------------ */
@@ -219,49 +207,6 @@ function initTilt() {
 }
 
 /* ------------------------------------------------------------------
-   Pull a card
-   ------------------------------------------------------------------ */
-function initPull() {
-  const card = $("#tcard");
-  const btn = $("#pullBtn");
-  const msg = $("#pulledMsg");
-  if (!card) return;
-  let flipped = false;
-
-  const setCard = (p) => {
-    $("#cardRarity").textContent = p.rarity;
-    $("#cardArt").textContent = p.art;
-    $("#cardName").textContent = p.name;
-    $("#cardType").textContent = p.type;
-  };
-
-  const pull = () => {
-    if (flipped) {
-      // flip back, then draw a new one and flip forward
-      card.classList.remove("flipped");
-      flipped = false;
-      msg.textContent = "";
-      setTimeout(() => {
-        setCard(PULLS[Math.floor(Math.random() * PULLS.length)]);
-        card.classList.add("flipped");
-        flipped = true;
-        showMsg();
-      }, 460);
-    } else {
-      setCard(PULLS[Math.floor(Math.random() * PULLS.length)]);
-      card.classList.add("flipped");
-      flipped = true;
-      showMsg();
-    }
-  };
-  const showMsg = () => { msg.textContent = `You pulled a ${$("#cardRarity").textContent}! 🎉`; };
-
-  btn?.addEventListener("click", pull);
-  card.addEventListener("click", pull);
-  card.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); pull(); } });
-}
-
-/* ------------------------------------------------------------------
    Misc
    ------------------------------------------------------------------ */
 function initMisc() {
@@ -285,5 +230,4 @@ document.addEventListener("DOMContentLoaded", () => {
   initCursor();
   initHeroCards();
   initTilt();
-  initPull();
 });
