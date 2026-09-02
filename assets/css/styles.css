@@ -535,3 +535,9 @@ main,.footer{margin-left:0!important}.wrap{max-width:1280px!important}.section{p
   .contact-row .cv{overflow-wrap:anywhere}
   .map-embed iframe{height:210px}
 }
+/* Wordmark lockup: never wrap, and replace the green O with the house mark. */
+.wordmark .name{white-space:nowrap!important;display:block!important;font-size:clamp(3.2rem,10.5vw,9.5rem)!important;letter-spacing:0!important}
+.wordmark .name .o{display:inline-flex!important;align-items:center!important;justify-content:center!important;vertical-align:middle!important;width:.7em!important;height:.82em!important;margin-inline:.015em!important;color:transparent!important;overflow:hidden!important}
+.wordmark .name .o img{display:block!important;width:100%!important;height:100%!important;object-fit:cover!important;object-position:center!important;mix-blend-mode:screen!important}
+.footer .brand-name{white-space:nowrap!important}.footer .brand-o{display:inline-flex!important;vertical-align:middle!important;width:1em!important;height:1em!important;align-items:center!important;justify-content:center!important;overflow:hidden!important;color:transparent!important}.footer .brand-o img{width:100%!important;height:100%!important;object-fit:cover!important;mix-blend-mode:screen!important}
+@media(max-width:720px){.wordmark .name{font-size:clamp(2.25rem,11.8vw,4.4rem)!important;letter-spacing:-.02em!important}.wordmark .name .o{width:.72em!important;height:.84em!important}.footer .brand-name{font-size:.95rem!important}}
