@@ -1,0 +1,34 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Validate static site files
+        run: |
+          set -euo pipefail
+          test -f index.html
+          test -f standalone.html
+          test -f vercel.json
+          test -f assets/css/styles.css
+          test -f assets/js/main.js
+          test -f assets/img/favicon.svg
+          test -f assets/img/mark.svg
+
+      - name: Validate HTML references
+        run: |
+          set -euo pipefail
+          grep -q 'assets/css/styles.css' index.html
+          grep -q 'assets/js/main.js' index.html
+          grep -q 'assets/img/' index.html
