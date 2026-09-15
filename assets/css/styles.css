@@ -545,4 +545,15 @@ main,.footer{margin-left:0!important}.wrap{max-width:1280px!important}.section{p
 /* Forge-CT attribution */
 .forge-attribution { margin: .65rem 0 0; color: inherit; font-size: .72em; opacity: .72; }
 .forge-attribution a { color: inherit; text-underline-offset: 2px; }
-.forge-attribution a:hover, .forge-attribution a:focus-visible { opacity: 1; }
+ .forge-attribution a:hover, .forge-attribution a:focus-visible { opacity: 1; }
+
+/* Use the supplied Pokémon card back in the live-inventory fan. */
+.fan-card {
+  background-image: url('../img/pokemon-card-back.png') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  border-color: rgba(18, 39, 82, .9) !important;
+  box-shadow: 0 18px 35px rgba(0, 0, 0, .42) !important;
+}
+.fan-card.c3 { background-color: transparent !important; }
