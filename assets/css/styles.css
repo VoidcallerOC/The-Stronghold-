@@ -541,3 +541,8 @@ main,.footer{margin-left:0!important}.wrap{max-width:1280px!important}.section{p
 .wordmark .name .o img{display:block!important;width:100%!important;height:100%!important;object-fit:cover!important;object-position:center!important;mix-blend-mode:screen!important}
 .footer .brand-name{white-space:nowrap!important}.footer .brand-o{display:inline-flex!important;vertical-align:middle!important;width:1em!important;height:1em!important;align-items:center!important;justify-content:center!important;overflow:hidden!important;color:transparent!important}.footer .brand-o img{width:100%!important;height:100%!important;object-fit:cover!important;mix-blend-mode:screen!important}
 @media(max-width:720px){.wordmark .name{font-size:clamp(2.25rem,11.8vw,4.4rem)!important;letter-spacing:-.02em!important}.wordmark .name .o{width:.72em!important;height:.84em!important}.footer .brand-name{font-size:.95rem!important}}
+
+/* Forge-CT attribution */
+.forge-attribution { margin: .65rem 0 0; color: inherit; font-size: .72em; opacity: .72; }
+.forge-attribution a { color: inherit; text-underline-offset: 2px; }
+.forge-attribution a:hover, .forge-attribution a:focus-visible { opacity: 1; }
